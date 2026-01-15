@@ -1,0 +1,25 @@
+
+# virtual environements
+venv/
+env/
+.venv/
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# variable environements
+.env
+.env.*
+
+# editeur
+.vscode/
+
+# logs, temps, db
+*.log
+*.tmp
+*.sqlite3
+instance/
+.webassets-cache/

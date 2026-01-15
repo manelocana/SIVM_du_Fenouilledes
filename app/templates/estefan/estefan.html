@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}SIVOM Estefan{% endblock %}
+
+{% block content %}
+
+<section class="hero-section">
+    <div class="container">
+        <h1>Bienvenu a la partie de estefan</h1>
+        <p>Ici le chantier avec les tracteurs etc...</p>
+        <img src="{{ url_for('static', filename='img/tracteur_estefan.jpeg') }}" alt="Tracteur">
+    </div>
+</section>
+
+
+<section class="descripcion">
+    <div class="container">
+        <h2>Notre travail... </h2>
+        <p>
+            Ici la description du travail du chantier qui s'occupe estefan
+        </p>
+    </div>
+</section>
+
+
+<section class="cards-section">
+    <div class="container">
+        <h2>Travaux</h2>
+        <div class="cards-container">
+
+            <div class="container">
+                <div class="card">
+                    <h3>saint paul de fenuillet</h3>
+                    <p>reparer la route et la riviere</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="card">
+                    <h3>caudilles</h3>
+                    <p>reparer la route et la riviere</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="card">
+                    <h3>fosse</h3>
+                    <p>reparer la route et la riviere</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="card">
+                    <h3>maury</h3>
+                    <p>reparer la route et la riviere</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="card">
+                    <h3>esquerde</h3>
+                    <p>reparer la route et la riviere</p>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="card">
+                    <h3>vira</h3>
+                    <p>reparer la route et la riviere</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

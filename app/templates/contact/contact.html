@@ -1,0 +1,56 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}SIVOM contact{% endblock %}
+
+{% block content %}
+<section class="contact-section flex-column">
+
+    <!-- hero -->
+    <div class="container flex-column">
+        <img src="{{ url_for('static', filename='img/hero_sivom.jpg') }}" alt="Contacto SIVOM">
+        <h1>Contact</h1>
+        <p>Tu besoin du travaux ?
+            Tu veux travailler avec nous comme agent-forestier? 
+        </p>
+    </div>
+
+    <!-- info contanct-->
+    <div class="container flex-column contact-info">
+        <h2>Info</h2>
+        <p><strong>Direction:</strong> Rue de la boite sivom, Saint Paul de Fenouillet 66220</p>
+        <p><strong>Telf:</strong> +33 123 456 789</p>
+        <p><strong>Email:</strong> <a href="mailto:contact@sivom.fr">contact@sivom.fr</a></p>
+    </div>
+
+    <!-- form -->
+    <!--   {#  <div class="container flex-column contact-form">
+        <h2>Envoi-nous un message</h2>
+        <form action="{{ url_for('contact.send_email') }}" method="POST" class="flex-column" style="gap:1rem;">
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="subject" placeholder="Sujet" required>
+            <textarea name="message" placeholder="Ecris ton message..." rows="5" required></textarea>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+    </div>   #}   -->
+
+    <!-- google maps -->
+    <div class="container">
+        <h2>Adresse GPS</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1953.6024943819327!2d2.4917455720010344!3d42.807448837172494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b01fb0007a1131%3A0x5d6368e41e973fd4!2sSivom%20De%20Fenouill%C3%A8de%20Syndicat%20Intercommunal%20%C3%A0%20Vocations%20Multiples!5e0!3m2!1ses!2sfr!4v1768436477279!5m2!1ses!2sfr" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>"
+            
+        </iframe>
+    </div>
+
+</section>
+{% endblock %}

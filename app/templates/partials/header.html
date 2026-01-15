@@ -1,0 +1,35 @@
+
+
+
+
+<header>
+    <div class="container-header">
+        <div class="header-logo">
+            <a href="{{ url_for('home.home') }}">
+                <img src="{{ url_for('static', filename='img/logo_sivom.jpg')}}"
+                    alt="logo sivom">
+            </a>
+        </div>
+        
+        
+        <nav>
+            <a href="{{ url_for('home.home') }}">Accueil</a>
+            <a href="{{ url_for('estefan.estefan') }}">Estefan</a>
+            <a href="{{ url_for('julien.julien') }}">Julien</a>
+            <a href="{{ url_for('blog.blog') }}">Actualite/blog</a>
+            <a href="{{ url_for('contact.contact') }}">Contact</a>
+
+
+
+
+        </nav>
+
+
+        <div class="contact">
+            <a href="{{ url_for('contact.contact') }}" class="btn">Contacte-nous</a>
+        </div>
+       
+    </div>
+</header>
+
+   

@@ -1,0 +1,50 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block title %}SIVOM home{% endblock %}
+
+{% block content %}
+<section class="hero-section flex-column">
+    <div class="container">
+        <h1>SIVOM du Fenouillet</h1>
+        <p>Ici peu-etre un text ? </p>
+        <img src="{{ url_for('static', filename='img/hero_sivom.jpg') }}" alt="Image hero">
+    </div>
+</section>
+
+
+<section class="description">
+    <div class="container">
+        <h2>Qui sommes nous ?</h2>
+        <p>
+            Ici le texte pour expliquer cest quoi la sivom , le travail qui fais, les deux parties du chantier,
+            les colaborateurs, subventions etc ... 
+        </p>
+    </div>
+</section>
+
+<section class="description">
+    <div class="container">
+        <h2>Nous Colaborateurs</h2>
+        <p>
+            Ici le texte pour expliquer
+            les colaborateurs, subventions etc ... 
+        </p>
+    </div>
+</section>
+
+
+<section class="images-home-section">
+    <div class="container">
+        <h2>Images que on peu utiliser generals</h2>
+        <div class="imagenes">
+            <img src="{{ url_for('static', filename='img/julien_hero.jpg') }}" alt="Tracteur">
+            <img src="{{ url_for('static', filename='img/julien_hero.jpg') }}" alt="Tracteur">
+            <img src="{{ url_for('static', filename='img/julien_hero.jpg') }}" alt="Tracteur">
+            <img src="{{ url_for('static', filename='img/julien_hero.jpg') }}" alt="Tracteur">
+        </div>
+    </div>
+</section>
+{% endblock %}
