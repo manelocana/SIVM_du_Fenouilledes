@@ -1,7 +1,7 @@
-# SIVOM du Fenouillet - Site Web
+# SIVM du Fenouillèdes - Site Web
 
 **Développeur :** Manel Ocaña 
-**Projet :** Site web institutionnel pour le SIVOM du Fenouillet, entreprise publique d'agents forestiers et de travaux avec machines agricoles.
+**Projet :** Site web institutionnel pour le SIVM du Fenouillèdes, entreprise publique d'agents forestiers et de travaux avec machines agricoles.
 
 ---
 
@@ -108,4 +108,5 @@ L'objectif principal est de fournir une **présentation claire** de l'entreprise
     Développeur : Manel
      
     Email : manelocana.dev@gmail.com
+
 
