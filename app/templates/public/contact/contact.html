@@ -10,41 +10,36 @@
     <!-- hero -->
     <div class="container flex-column">
         <img src="{{ url_for('static', filename='img/hero_sivom.jpg') }}" alt="Contacto SIVOM">
-        <h1>Contact</h1>
-        <p>Tu besoin du travaux ?
-            Tu veux travailler avec nous comme agent-forestier? 
-        </p>
     </div>
+
+    <div class="flex-center">
+        <h1>Contact</h1>
+    </div>
+
 
     <!-- info contanct-->
 
-    <div class="container flex-column contact-info">
+    <div class="container flex-column text-center">
         <h2>Heures d’ouverture du SIVM du Fenouillèdes :</h2>
         <p>Lundi, Mardi, Mercredi de 08h à 16h</p>
         <p>Jeudi de 08h à 15h </p>
         <p>Vendredi de 08h à 12h</p>
     </div>
 
-    <div class="container flex-column contact-info">
+    <div class="container flex-column text-center">
         <h2>Vous pouvez nous contacter </h2>
-        <p><strong>Par mail :</strong>Il est préférable de remplir le formulaire de contact pour toute candidature 
+        <p><strong>Par mail :</strong>Il est préférable de remplir le formulaire de contact pour toute candidature:
             <a href="mailto:sivm.fenouilledes@wanadoo.fr">sivm.fenouilledes@wanadoo.fr</a> (pièce jointe CV)</p>
         <p><strong>Par téléphone :</strong>04 68 59 09 08</p>
         <p><strong>Par courrier :</strong>50 avenue du Général de Gaulle – 66220 SAINT PAUL DE FENOUILLET</p>
+        
+        <p>Suivez-nous sur notre page Facebook 
+            <a href="https://www.facebook.com/profile.php?id=100082044503430&locale=fr_FR"
+                target="_blank"
+                class="link-normal">SIVM du Fenouillèdes</a>
+        </p>
     </div>
 
-    
-    <!-- form -->
-    <!--   {#  <div class="container flex-column contact-form">
-        <h2>Envoi-nous un message</h2>
-        <form action="{{ url_for('contact.send_email') }}" method="POST" class="flex-column" style="gap:1rem;">
-            <input type="text" name="name" placeholder="Nombre" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="subject" placeholder="Sujet" required>
-            <textarea name="message" placeholder="Ecris ton message..." rows="5" required></textarea>
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
-    </div>   #}   -->
 
     <!-- google maps -->
     <div class="container">

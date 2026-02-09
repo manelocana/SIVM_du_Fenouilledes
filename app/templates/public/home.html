@@ -14,11 +14,10 @@
 {% block content %}
 
 
-    <section class="hero-section flex-column">
+    <section class="hero-section text-center">
         <div class="container">
             <h1>SIVM du Fenouillèdes</h1>
-            <p>Ici peu-etre un text ? </p>
-            <img src="{{ url_for('static', filename='img/hero_sivom.jpg') }}" alt="Image hero">
+            <img src="{{ url_for('static', filename='img/home_hero.png') }}" alt="Image hero">
         </div>
     </section>
 
@@ -26,36 +25,32 @@
     <section class="description">
         <div class="container">
             <h2>UN SYNDICAT INTERCOMMUNAL ENGAGÉ POUR LE FENOUILLÈDES</h2>
-            <p>
+            <p><strong>
                 Créé en 1974, le SIVM du Fenouillèdes (Syndicat Intercommunal à Vocation Multiple) est un établissement public de coopération intercommunale basé à Saint Paul de Fenouillet dans le département des Pyrénées-Orientales.
+
                 Sa gestion est assurée par un conseil syndical composé de deux délégués par commune adhérente, soit un total de 22 délégués et représenté par son Président.
+                
                 Il regroupe les Communes de 
                 Ansignan, Caudiès de Fenouillèdes, Fenouillet, Fosse, Lesquerde, Maury, Prugnanes, Saint Arnac, Saint Martin de Fenouillet, Saint Paul de Fenouillet et Vira.
+                
                 Il œuvre depuis plus de 50 ans au service des communes et des habitants du territoire en exerçant des compétences essentielles :
                     • L’entretien et l’aménagement de la voirie communale,
                     • La DFCI – Défense des Forêts Contre les Incendies,
                     • La gestion d’un chantier d’insertion, favorisant l’accompagnement vers l’emploi.
+                
                 À travers ses actions, le SIVM du Fenouillèdes conjugue efficacité technique, prévention des risques et engagement humain, contribuant activement à la qualité de vie et au dynamisme local.
+                
                 Proximité, efficacité et solidarité sont au cœur des valeurs du SIVM du Fenouillèdes. En agissant à la fois pour l’aménagement, la prévention et l’humain, le syndicat contribue activement au dynamisme et à la qualité de vie des communes et de leurs habitants. 
-            </p>
+            </strong></p>
 
-            <img src="{{ url_for('static', filename='img/carte_fenouillet.jpg') }}" alt="img carte fenouillet">
+            <img src="{{ url_for('static', filename='img/home_carte_fenouillet.jpg') }}" alt="img carte fenouillet">
 
         </div>
     </section>
 
-    <section class="description">
-        <div class="container">
-            <h2>Nous Colaborateurs</h2>
-            <p>
-                Ici le texte pour expliquer
-                les colaborateurs, subventions etc ... 
-            </p>
-        </div>
-    </section>
 
 
-    <section class="images-home-section">
+    <!-- <section class="images-home-section">
         <div class="container">
             <h2>Images que on peu utiliser generals</h2>
             <div class="imagenes">
@@ -65,7 +60,7 @@
                 <img src="{{ url_for('static', filename='img/julien_hero.jpg') }}" alt="Tracteur">
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 {% endblock %}

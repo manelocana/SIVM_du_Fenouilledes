@@ -11,8 +11,6 @@
 }
 
 
-
-
 /* Reset + base */
 
 * {
@@ -38,22 +36,26 @@ img {
     border-radius: 6px;
 }
 
-h1 {font-size: 3.5em; color: var(--text-main);}
-h2 {font-size: 2.7em; color: var(--text-main)}
-h3 {font-size: 2em; color: var(--text-main);}
-p {font-size: 1.8em;}
+h1 {font-size: 2.5em; color: var(--text-main);}
+h2 {font-size: 1.7em; color: var(--text-main)}
+h3 {font-size: 1em; color: var(--text-main);}
+p {font-size: 1.3em;}
 a {text-decoration: none; color: inherit;}
 ul {list-style: none;}
 li {font-size: 1.2em;}
 
 
+.link-normal {
+    color: blue;
+    text-decoration: underline;
+}
 
 
 /* Utilities */
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     padding-inline: clamp(16px, 5vw, 48px);
     margin: 0 auto;
 }
@@ -77,6 +79,11 @@ li {font-size: 1.2em;}
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.text-center {
+    display: flex;
+    text-align: center;
 }
 
 
@@ -242,18 +249,21 @@ footer .container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    text-align: center;
 }
 
 footer nav a {
     display: block;
-    margin-bottom: 0.3rem;
     font-size: 0.9rem;
 }
 
 footer small {
-    font-size: 0.8rem;
+    display: block;
+    text-align: center;
+    font-size: 0.5rem;
     opacity: 0.8;
     text-align: center;
+    margin-top: 50px;
 }
 
 
@@ -262,6 +272,14 @@ footer small {
 /* Desktop (simple) */
 
 @media (min-width: 768px) {
+
+    h1 {font-size: 3.5em; color: var(--text-main);}
+    h2 {font-size: 2.7em; color: var(--text-main)}
+    h3 {font-size: 2em; color: var(--text-main);}
+    p {font-size: 1.8em;}
+    a {text-decoration: none; color: inherit;}
+    ul {list-style: none;}
+    li {font-size: 1.2em;}
 
     header {
         position: sticky;
@@ -315,18 +333,19 @@ footer small {
         width: 45%; /* cada columna ocupa ~45% */
     }
 
+    footer .container_left {
+        text-align: left;
+    }
+
     footer .container_right {
         text-align: right;
-        margin-right: 10%;
-        }
-
-    footer nav a {
-        margin: 10px;
     }
 
     footer small {
-        margin-top: 4rem;
+        margin-top: 6rem;
         display: block;
         text-align: center;
     }
+
+
 }
