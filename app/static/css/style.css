@@ -26,6 +26,7 @@ html {
 body {
     font-family: system-ui, -apple-system, sans-serif;
     background-color: var(--bg-light);
+    background: linear-gradient(180deg, #f4f6f3 0%, #eef2ec 100%);
     color: var(--text-main);
     line-height: 1.6;
 }
@@ -60,14 +61,29 @@ li {font-size: 1.2em;}
     margin: 0 auto;
 }
 
+section {
+    padding: 2rem 0;
+}
+
 
 .btn {
     background-color: var(--brown);
     color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
+
+.btn:hover {
+    background-color: #5f4630;
+    transform: translateY(-2px);
+}
+
+
+
+
 
 .flex-center {
     display: flex;
@@ -119,6 +135,9 @@ header {
     background-color: var(--green-dark);
     color: #fff;
     z-index: auto;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    
 }
 
 .container-header {
@@ -144,6 +163,12 @@ nav {
 
 nav a {
     font-size: 0.95rem;
+    position: relative;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.7;
 }
 
 .contact {
@@ -156,8 +181,7 @@ nav a {
 /* Hero (home + estefan) */
 
 .hero-section {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin: 0.5rem 0;
     gap: 0.8rem;
 }
 
@@ -171,6 +195,8 @@ nav a {
     height: 500px;
     max-width: 350px;
     margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 
@@ -202,8 +228,15 @@ nav a {
 }
 
 .logo-grid img {
-    max-width: 200px;
+    max-width: 180px;
     margin: 0 auto;
+    opacity: 0.9;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logo-grid img:hover {
+    transform: scale(1.05);
+    opacity: 1;
 }
 
 
@@ -224,8 +257,14 @@ nav a {
     padding: 1rem;
     border-radius: 6px;
     border-left: 4px solid var(--green-light);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
 .card h3 {
@@ -247,10 +286,11 @@ nav a {
 
 .contact-hours {
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 .contact-info {
-    margin-top: 3rem;
+    margin-bottom: 1rem;
     order: 1;
     max-width: 600px;
     text-align: center;
@@ -265,7 +305,8 @@ nav a {
     width: 100%;
     aspect-ratio: 4/3;
     border: 0;
-    border-radius: 6px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
 
@@ -276,7 +317,7 @@ footer {
     background-color: var(--green-dark);
     color: #fff;
     padding: 2rem 0;
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 
 footer .container {
@@ -290,6 +331,11 @@ footer nav a {
     display: block;
     font-size: 0.9rem;
 }
+
+footer nav a:hover {
+    opacity: 0.7;
+}
+
 
 footer h3 {
     color: white;
