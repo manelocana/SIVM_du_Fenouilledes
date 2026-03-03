@@ -29,6 +29,18 @@
                     <td>{{ user.username }}</td>
                     <td>{{ user.role }}</td>
                     <td>
+
+                        {% if current_user.role == 'admin' %}
+                        <form action="{{ url_for('admin.delete_user', user_id=user.id) }}" 
+                              method="POST"
+                              style="display:inline;"
+                              onsubmit="return confirm('Delete this user?');">
+                            
+                              {{ delete_form.hidden_tag() }}
+                              {{ delete_form.submit(class="btn btn-danger") }}                        
+                        </form>
+                        {% endif %}
+
                         
                     </td>
                 </tr>
