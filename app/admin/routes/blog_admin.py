@@ -12,7 +12,6 @@ from app.decorators import role_required
 
 
 
-
 blog_admin_bp = Blueprint('blog_admin', __name__, url_prefix='/admin')
 
 
@@ -40,7 +39,7 @@ def blog_new():
 
         new_post = Post(
             title=form.title.data,
-            description=form.description.data,
+            content=form.content.data,
             image=image_filename
         )
 
@@ -69,7 +68,7 @@ def blog_edit(post_id):
     if form.validate_on_submit():
         """ actualizar datos """
         post.title = form.title.data
-        post.description = form.description.data
+        post.content = form.content.data
 
         image_file = form.image.data
         if image_file and image_file.filename:
