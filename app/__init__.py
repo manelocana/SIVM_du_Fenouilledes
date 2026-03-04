@@ -2,7 +2,7 @@
 
 from flask import Flask
 from config import Config
-from app.extensions import db, login_manager
+from app.extensions import db, login_manager, migrate
 
 from app.public.routes.home_routes import home_bp
 from app.public.routes.sivm_routes import sivm_bp
@@ -24,6 +24,7 @@ def create_app():
     app.config.from_object(Config)
 
     db.init_app(app)
+    migrate.init_app(app, db)
 
     login_manager.init_app(app)
     login_manager.login_view = 'auth.login'

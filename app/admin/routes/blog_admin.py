@@ -12,6 +12,7 @@ from app.decorators import role_required
 
 
 
+
 blog_admin_bp = Blueprint('blog_admin', __name__, url_prefix='/admin')
 
 

@@ -6,8 +6,12 @@ from app.decorators import role_required
 
 from app.models.user import User
 
+from app.models.settings import Setting
+
 from app.extensions import db
 from app.forms.admin import DeleteForm
+from app.forms.date import SettingDateForm
+
 
 
 
@@ -61,3 +65,21 @@ def delete_user(user_id):
 
     flash("User deleted successfully.", "success")
     return redirect(url_for("admin.admin_users"))
+
+
+
+
+@admin_bp.route("/admin/setting_date", methods=["GET", "POST"])
+@login_required
+@role_required(["admin"])
+def edit_setting_date():
+    setting = Setting.query.first()
+    form = SettingDateForm(obj=setting)  # Pre-llenar con la fecha actual
+
+    if form.validate_on_submit():
+        setting.next_meeting_date = form.next_meeting_date.data
+        db.session.commit()
+        flash("Fecha actualizada", "success")
+        return redirect(url_for("edit_setting_date"))
+
+    return render_template("admin/setting_date.html", form=form)

@@ -1,0 +1,19 @@
+
+
+
+{% extends "partials/base.html" %}
+
+
+{% block content %}
+
+
+  <h2>Editar fecha próxima reunión</h2>
+  <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.next_meeting_date.label }}<br>
+      {{ form.next_meeting_date() }}<br><br>
+      {{ form.submit() }}
+  </form>
+
+  
+{% endblock %}

@@ -24,8 +24,16 @@
             Le prochain Conseil syndical se tiendra à la salle de réunion du SIVM du Fenouillèdes le 
     </div>
 
-    <div class="flex-center">
-        <p>ICI UN INPUT =>  DATE: _______ </p>
+
+    <!-- fecha para reuniones -->
+    <div class="cards-section">
+        <div class="flex-center">
+            {% if setting.next_meeting_date %}
+                {{ setting.next_meeting_date.strftime('%d/%m/%Y') }}
+            {% else %}
+                Date à définir
+            {% endif %}
+        </div>
     </div>
 
 </section>
