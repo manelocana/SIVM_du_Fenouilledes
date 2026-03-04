@@ -15,3 +15,4 @@ class Post(db.Model):
     content = db.Column(db.Text, nullable=False)
     image = db.Column(db.String(255))
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+    published = db.Column(db.Boolean, default=True)

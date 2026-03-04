@@ -14,6 +14,7 @@ from app.public.routes.partner_routes import partner_bp
 from app.admin.routes.admin_routes import admin_bp
 from app.admin.routes.auth import auth_bp
 from app.admin.routes.blog_admin import blog_admin_bp
+from app.admin.routes.actualite_admin import actualite_admin_bp
 
 from app.user.routes.user_routes import user_bp
 
@@ -23,12 +24,13 @@ def create_app():
 
     app.config.from_object(Config)
 
+
     db.init_app(app)
     migrate.init_app(app, db)
 
     login_manager.init_app(app)
     login_manager.login_view = 'auth.login'
-    
+
     
     app.register_blueprint(home_bp)
     app.register_blueprint(sivm_bp)
@@ -40,6 +42,7 @@ def create_app():
     app.register_blueprint(admin_bp)
     app.register_blueprint(auth_bp)
     app.register_blueprint(blog_admin_bp)
+    app.register_blueprint(actualite_admin_bp)
     
     app.register_blueprint(user_bp)
     

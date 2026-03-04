@@ -12,7 +12,7 @@
 <section class="admin-dashboard text-center">
     <div class="container">
 
-        <h1>Admin - tableau de bord</h1>
+        <h1>Tableau de bord</h1>
         <p>Bienvenue, {{ current_user.username }}</p>
         <hr>
 
@@ -39,7 +39,7 @@
             <div class="admin-card">
                 <h3>Actualité</h3>
                 <p>Modifier actualité</p>
-                {# <a href="{{ url_for('admin_pages.edit_about') }}" class="btn">Gérer actualités</a> #}
+                <a href="{{ url_for('actualite_admin.actualite_dashboard') }}" class="btn">Gérer actualités</a>
             </div>
 
         

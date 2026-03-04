@@ -6,14 +6,25 @@
 
 {% block content %}
 
+<section class="container">
 
-  <h2>Editar fecha próxima reunión</h2>
-  <form method="POST">
-      {{ form.hidden_tag() }}
-      {{ form.next_meeting_date.label }}<br>
-      {{ form.next_meeting_date() }}<br><br>
-      {{ form.submit() }}
-  </form>
+  <div class="flex-column text-center">
+
+    <h2>Changer la date du prochain Conseil syndical</h2>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.next_meeting_date.label }}<br>
+        {{ form.next_meeting_date() }}<br><br>
+
+        {{ form.submit(class="btn") }}
+
+        <a href="{{ url_for('actualite_admin.actualite_dashboard') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+  
+  </div>
+
+</section>
 
   
 {% endblock %}
