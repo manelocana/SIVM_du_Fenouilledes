@@ -13,32 +13,30 @@
     <div class="container">
 
         <h1>Tableau de bord</h1>
-        <p>Bienvenue, {{ current_user.username }}</p>
+        <h2>Bienvenue, {{ current_user.username }}</h2>
+
+        <br>
         <hr>
 
         <div class="admin-grid">
 
             <div class="admin-card">
-                <h3>Modérateurs</h3>
-                <p>Gérer les utilisateurs</p>
+                <h3>Utilisateurs</h3>                
                 <a href="{{ url_for('admin.admin_users') }}" class="btn">Afficher les utilisateurs</a>
             </div>
 
             <div class="admin-card">
                 <h3>SIVM</h3>
-                <p>Modifier posts</p>
                 {# <a href="{{ url_for('blog_admin.blog_list') }}" class="btn">Gérer SIVM</a> #}
             </div>
 
             <div class="admin-card">
                 <h3>ACI</h3>
-                <p>Modifier posts</p>
                 {# <a href="{{ url_for('portfolio_admin.portfolio_admin_list') }}" class="btn">Gérer ACI</a> #}
             </div>
 
             <div class="admin-card">
-                <h3>Actualité</h3>
-                <p>Modifier actualité</p>
+                <h3>Actualités</h3>
                 <a href="{{ url_for('actualite_admin.actualite_dashboard') }}" class="btn">Gérer actualités</a>
             </div>
 
