@@ -1,0 +1,94 @@
+
+
+{% extends "partials/base.html" %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="admin-section">
+    <div class="container">
+
+    <div class="admin-header">
+        <h1>Documents officiels</h1>
+        <a href="{{ url_for('documents_admin.document_new') }}" class="btn">
+            + Ajouter Nouveau Document
+        </a>
+    </div>
+
+
+    <div class="admin-footer">
+        <a href="{{ url_for('actualite_admin.actualite_dashboard') }}" class="btn">
+            Retour Gestion Actualité
+        </a>
+    </div>
+
+
+    {% if documents %}
+    <table class="admin-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Fichier</th>
+                <th>Catégorie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for doc in documents %}
+            <tr>
+                <td>{{ doc.id }}</td>
+
+                <td>{{ doc.title }}</td>
+
+                <td>
+                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" target="_blank">Voir fichier</a>
+                </td>
+
+                <td>{{ doc.category }}</td>
+
+                <td class="actions">
+
+                    <a href="{{ url_for('documents_admin.document_edit', id=doc.id) }}" class="btn">
+                        Modifier
+                    </a>
+
+                    <form action="{{ url_for('documents_admin.document_delete', id=doc.id) }}"
+                          method="POST"
+                          style="display:inline;"
+                          onsubmit="return confirm('Supprimer ce document ?');">
+
+                        <button class="btn">Supprimer</button>
+
+                    </form>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    {% else %}
+        <p>Aucun document pour le moment.</p>
+    {% endif %}
+
+    <div class="admin-footer">
+        <a href="{{ url_for('actualite_admin.actualite_dashboard') }}" class="btn">
+            Retour Gestion Actualité
+        </a>
+    </div>
+
+</div>
+
+
+</section>
+
+{% endblock %}

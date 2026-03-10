@@ -15,6 +15,7 @@ from app.admin.routes.admin_routes import admin_bp
 from app.admin.routes.auth import auth_bp
 from app.admin.routes.blog_admin import blog_admin_bp
 from app.admin.routes.actualite_admin import actualite_admin_bp
+from app.admin.routes.documents_routes import documents_admin_bp
 
 from app.user.routes.user_routes import user_bp
 
@@ -43,6 +44,7 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(blog_admin_bp)
     app.register_blueprint(actualite_admin_bp)
+    app.register_blueprint(documents_admin_bp)
     
     app.register_blueprint(user_bp)
     

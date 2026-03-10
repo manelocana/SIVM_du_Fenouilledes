@@ -1,0 +1,66 @@
+
+
+{% extends 'partials/base.html' %}
+
+{% block content %}
+
+<section class="blog-form-page">
+    <div class="blog-form-card flex-column">
+
+    <h2>Ajouter un document</h2>
+
+    <form method="POST"
+          action="{{ url_for('documents_admin.document_new') }}"
+          enctype="multipart/form-data"
+          class="form"
+          novalidate>
+
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.title.label }}
+            {{ form.title(class="form-control") }}
+
+            {% for error in form.title.errors %}
+                <small class="form-error">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+
+        <div class="form-group">
+            {{ form.category.label }}
+            {{ form.category(class="form-control") }}
+
+            {% for error in form.category.errors %}
+                <small class="form-error">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+
+        <div class="form-group">
+            {{ form.file.label }}
+            {{ form.file(class="form-control") }}
+
+            {% for error in form.file.errors %}
+                <small class="form-error">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+
+        <div class="form-actions">
+            {{ form.submit(class="btn") }}
+
+            <a href="{{ url_for('documents_admin.documents_list') }}"
+               class="btn btn-danger">
+                Retour
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+
+</section>
+
+{% endblock %}

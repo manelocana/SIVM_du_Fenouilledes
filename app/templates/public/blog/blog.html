@@ -53,26 +53,38 @@
 
             <div class="container">
                 <div class="card">
-                    <h3>Lettre Info</h3>
-                    <p>ici le lien au lettres, ou le fichier a telecharger</p>
+                    <h3>Lettres</h3>
+                    {% for doc in lettres %}
+                        <a href="{{ url_for('static', filename='uploads/documents/' + doc.file) }}">
+                            {{ doc.title }}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
+
 
             <div class="container">
                 <div class="card">
-                    <h3>Délibérations</h3>
-                    <p>deliberations pdf</p>
+                    <h3>Deliberations</h3>
+                    {% for doc in deliberations %}
+                    <a href="{{ url_for('static', filename='uploads/documents/' + doc.file) }}">
+                        {{ doc.title }}
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
+
 
             <div class="container">
                 <div class="card">
-                    <h3>Arrêtés</h3>
-                    <p>ici</p>
+                    <h3>Arretes</h3>
+                    {% for doc in arretes %}
+                    <a href="{{ url_for('static', filename='uploads/documents/' + doc.file) }}">
+                        {{ doc.title }}
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
-
-            
 
         </div>
     </div>
@@ -97,4 +109,5 @@
         </div>
     </div>
 </section>
+
 {% endblock %}
