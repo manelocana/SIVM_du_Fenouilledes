@@ -20,28 +20,28 @@
 	        Le Président tient informé tout au long de son mandat les communes adhérentes par une lettre info au-delà des conseils syndicaux pendant lesquelles sont prises les décisions par délibération.
             
             Il peut aussi prendre des arrêtés dans le cadre de ses compétences.
-            
-            Le prochain Conseil syndical se tiendra à la salle de réunion du SIVM du Fenouillèdes le :
         </p>
-
+        
+        <p>Le prochain Conseil syndical se tiendra à la salle de réunion du SIVM du Fenouillèdes le :</p>
     </div>
 
 
     <!-- fecha para reuniones -->
-            <div class="card cards-container-blog card-dateconseil">
-                <span class="date-conseil">
-                    {% if setting.next_meeting_date %}
-                        {{ setting.next_meeting_date.strftime('%d/%m/%Y') }}
-                    {% else %}
-                        Date à définir
-                    {% endif %}
-                </span>
-            </div>
+    <div class="card-dateconseil">
+        <span class="date-conseil">
+            {% if setting.next_meeting_date %}
+                {{ setting.next_meeting_date.strftime('%d/%m/%Y') }}
+            {% else %}
+                Date à définir
+            {% endif %}
+        </span>
+    </div>
 
 </section>
 
 
 
+<!-- cards fijas para documentos -->
 <section class="cards-section">
     <div class="container">
 
@@ -53,36 +53,84 @@
 
             <div class="container">
                 <div class="card">
-                    <h3>Lettres</h3>
+                    <h3>Lettres</h3>                  
                     {% for doc in lettres %}
-                        <a href="{{ url_for('static', filename='uploads/documents/' + doc.file) }}">
-                            {{ doc.title }}
-                        </a>
+                    <h4>{{ doc.title }}</h4>
+
+                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+                        class="btn"
+                        target="_blank">
+
+                        Voir
+                    </a>
+
+
+                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
+                        <i class="fa fa-download"></i> Telecharger
+                    </a>   
                     {% endfor %}
+
+                    <a href="{{ url_for('blog.lettres_list') }}" class="btn">
+                    Voir tous les lettres
+                    </a>
                 </div>
             </div>
 
 
+
+
             <div class="container">
                 <div class="card">
-                    <h3>Deliberations</h3>
+                    <h3>Deliberations</h3>  
+
                     {% for doc in deliberations %}
-                    <a href="{{ url_for('static', filename='uploads/documents/' + doc.file) }}">
-                        {{ doc.title }}
+                    <h4>{{ doc.title }}</h4>
+
+                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+                        class="btn"
+                        target="_blank">
+
+                        Voir
                     </a>
+
+                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
+                        <i class="fa fa-download"></i> Telecharger
+                    </a>   
+
                     {% endfor %}
+
+                    <a href="{{ url_for('blog.deliberations_list') }}" class="btn">
+                    Voir tous les deliberations
+                    </a>
+
                 </div>
             </div>
 
 
             <div class="container">
                 <div class="card">
-                    <h3>Arretes</h3>
+                    <h3>Arretes</h3>              
+
                     {% for doc in arretes %}
-                    <a href="{{ url_for('static', filename='uploads/documents/' + doc.file) }}">
-                        {{ doc.title }}
+                    <h4>{{ doc.title }}</h4>
+
+                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+                        class="btn"
+                        target="_blank">
+
+                        Voir
                     </a>
+
+                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
+                        <i class="fa fa-download"></i> Telecharger
+                    </a>   
+
                     {% endfor %}
+
+                    <a href="{{ url_for('blog.arretes_list') }}" class="btn">
+                    Voir tous les arretes
+                    </a>
+
                 </div>
             </div>
 
@@ -99,12 +147,29 @@
 
         <div class="cards-container-blog">
 
-            {% for post in posts %}
-            <div class="card">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.content[:150] }}...</p>
+            {% if last_post %}
+            <div class="card latest-post-card">
+
+                {% if last_post.image %}
+                <img 
+                    src="{{ url_for('static', filename='uploads/blog/' ~ last_post.image) }}"
+                    class="post-image">
+                {% endif %}
+                
+                <h3>{{ last_post.title }}</h3>
+                <p>{{ last_post.content[:150] }}...</p>
+
+                <a href="{{ url_for('blog.blog_post', post_id=last_post.id) }}" class="btn">
+                    Voir
+                </a>
+
+                <a href="{{ url_for('blog.blog_list') }}" class="btn">
+                    Voir tous les posts
+                </a>
             </div>
-            {% endfor %}
+            {% else %}
+                <p>Pas encore de posts disponibles.</p>
+            {% endif %}
             
         </div>
     </div>

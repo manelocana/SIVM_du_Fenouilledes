@@ -1,0 +1,40 @@
+
+
+
+{% extends "partials/base.html" %}
+
+{% block content %}
+
+
+<section class="documents">
+    <div class="container">
+
+        <h1>Arretes</h1>
+
+        {% for doc in arretes %}
+        <div class="card">
+
+            <h3>{{ doc.title }}</h3>
+
+            <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+                class="btn"
+                target="_blank">
+                
+                Voir
+            </a>
+
+            
+            <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+               class="btn"
+               download>
+
+               Télécharger
+            </a>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

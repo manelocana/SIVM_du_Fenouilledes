@@ -19,4 +19,4 @@ class Document(db.Model):
 
     category = db.Column(db.String(50), nullable=False)
 
-    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), nullable=False)
