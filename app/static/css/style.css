@@ -90,6 +90,16 @@ section {
 }
 
 
+/* para las cards de actualite-info */
+.boton {
+    display: flex;
+    gap: 10px;
+}
+
+.boton:last-child {
+    justify-content: center;
+}
+
 
 
 
@@ -362,6 +372,11 @@ nav a:hover {
     text-align: center;
 }
 
+
+/* para lettres_list, arretes_list... */
+.card-list {
+    margin-bottom: 10px;
+}
 
 
 

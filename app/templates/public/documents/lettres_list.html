@@ -9,27 +9,26 @@
 <section class="documents">
     <div class="container">
 
-        <h1>Lettres d'information</h1>
+        <h1 class="flex-center">Lettres d'information</h1>
 
         {% for doc in lettres %}
-        <div class="card">
+        <div class="card card-list">
 
             <h3>{{ doc.title }}</h3>
 
-            <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+            <div class="boton">
+                <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+                    class="btn"
+                    target="_blank">         
+                    Voir
+                </a>
+
+                <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
                 class="btn"
-                target="_blank">
-                
-                Voir
-            </a>
-
-            
-            <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
-               class="btn"
-               download>
-
-               Télécharger
-            </a>
+                download>
+                Télécharger
+                </a>
+            </div>
 
         </div>
         {% endfor %}

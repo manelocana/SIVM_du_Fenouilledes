@@ -53,26 +53,31 @@
 
             <div class="container">
                 <div class="card">
-                    <h3>Lettres</h3>                  
+                    <h3>Lettres</h3>   
+
                     {% for doc in lettres %}
                     <h4>{{ doc.title }}</h4>
 
-                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
-                        class="btn"
-                        target="_blank">
+                    <div class="boton">
+                        <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+                            class="btn"
+                            target="_blank">
 
-                        Voir
-                    </a>
+                            Voir
+                        </a>
 
 
-                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
-                        <i class="fa fa-download"></i> Telecharger
-                    </a>   
+                        <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
+                            <i class="fa fa-download"></i> Telecharger
+                        </a>   
+                    </div>
                     {% endfor %}
 
-                    <a href="{{ url_for('blog.lettres_list') }}" class="btn">
-                    Voir tous les lettres
-                    </a>
+                    <div class="boton">
+                        <a href="{{ url_for('blog.lettres_list') }}" class="btn">
+                        Voir tous les lettres
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -85,23 +90,27 @@
 
                     {% for doc in deliberations %}
                     <h4>{{ doc.title }}</h4>
+                    
+                    <div class="boton">
+                        <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+                            class="btn"
+                            target="_blank">
 
-                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
-                        class="btn"
-                        target="_blank">
+                            Voir
+                        </a>
 
-                        Voir
-                    </a>
-
-                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
-                        <i class="fa fa-download"></i> Telecharger
-                    </a>   
+                        <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
+                            <i class="fa fa-download"></i> Telecharger
+                        </a>  
+                    </div> 
 
                     {% endfor %}
 
-                    <a href="{{ url_for('blog.deliberations_list') }}" class="btn">
-                    Voir tous les deliberations
-                    </a>
+                    <div class="boton">
+                        <a href="{{ url_for('blog.deliberations_list') }}" class="btn">
+                        Voir tous les deliberations
+                        </a>
+                    </div>
 
                 </div>
             </div>
@@ -114,22 +123,25 @@
                     {% for doc in arretes %}
                     <h4>{{ doc.title }}</h4>
 
-                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
-                        class="btn"
-                        target="_blank">
+                    <div class="boton">
+                        <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
+                            class="btn"
+                            target="_blank">
 
-                        Voir
-                    </a>
+                            Voir
+                        </a>
 
-                    <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
-                        <i class="fa fa-download"></i> Telecharger
-                    </a>   
-
+                        <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}" class="btn" download>
+                            <i class="fa fa-download"></i> Telecharger
+                        </a>   
+                    </div>
                     {% endfor %}
 
-                    <a href="{{ url_for('blog.arretes_list') }}" class="btn">
-                    Voir tous les arretes
-                    </a>
+                    <div class="boton">
+                        <a href="{{ url_for('blog.arretes_list') }}" class="btn">
+                        Voir tous les arretes
+                        </a>
+                    </div>
 
                 </div>
             </div>
@@ -159,13 +171,16 @@
                 <h3>{{ last_post.title }}</h3>
                 <p>{{ last_post.content[:150] }}...</p>
 
-                <a href="{{ url_for('blog.blog_post', post_id=last_post.id) }}" class="btn">
-                    Voir
-                </a>
+                <div class="boton">
+                    <a href="{{ url_for('blog.blog_post', post_id=last_post.id) }}" class="btn">
+                        Voir
+                    </a>
 
-                <a href="{{ url_for('blog.blog_list') }}" class="btn">
-                    Voir tous les posts
-                </a>
+                    <a href="{{ url_for('blog.blog_list') }}" class="btn">
+                        Voir tous les posts
+                    </a>
+                </div>
+                
             </div>
             {% else %}
                 <p>Pas encore de posts disponibles.</p>
