@@ -37,6 +37,7 @@
                 <th>Titre</th>
                 <th>Fichier</th>
                 <th>Catégorie</th>
+                <th>Creé le</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -53,6 +54,8 @@
                 </td>
 
                 <td>{{ doc.category }}</td>
+
+                <td>{{ doc.created_at.strftime('%d/%m/%Y') if doc.created_at else '-' }}</td>
 
                 <td class="actions">
 
