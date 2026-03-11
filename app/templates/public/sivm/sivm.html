@@ -41,55 +41,28 @@
 </section>
 
 
+
 <section class="cards-section">
     <div class="container">
 
-        <div class="flex-center">
-            <h2>Travaux</h2>
-        </div>
-        
-        
+        <h1>SIVM - Communes</h1>
+
         <div class="cards-container">
 
-            <div class="container">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img/cards_village/stpaul.png') }}" alt="saint paul">
-                </div>
-            </div>
+        {% for commune in communes %}
 
-            <div class="container">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img/cards_village/caudies.png') }}" alt="saint paul">
-                </div>
-            </div>
+        <div class="card">
 
-            <div class="container">
-                <div class="card">
-                    <h3>fosse</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
+            <h3>{{ commune.name }}</h3>
 
-            <div class="container">
-                <div class="card">
-                    <h3>maury</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
+            <a href="{{ url_for('sivm.sivm_commune', commune_id=commune.id) }}"
+            class="btn">
+            Voir
+            </a>
 
-            <div class="container">
-                <div class="card">
-                    <h3>esquerde</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
-            
-            <div class="container">
-                <div class="card">
-                    <h3>vira</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
+        </div>
+
+        {% endfor %}
 
         </div>
     </div>
