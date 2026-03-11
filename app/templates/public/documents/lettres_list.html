@@ -16,6 +16,10 @@
 
             <h3>{{ doc.title }}</h3>
 
+            <p class="post-date">
+                {{ doc.created_at.strftime('%d/%m/%Y') }}
+            </p>
+
             <div class="boton">
                 <a href="{{ url_for('static', filename='uploads/documents/' ~ doc.file) }}"
                     class="btn"

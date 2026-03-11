@@ -23,7 +23,7 @@ documents_admin_bp = Blueprint("documents_admin", __name__, url_prefix="/admin/d
 @login_required
 @role_required(["admin"])
 def documents_list():
-    documents = Document.query.order_by(Document.id.desc()).all()
+    documents = Document.query.order_by(Document.created_at.desc()).all()
 
     return render_template("admin/documents/documents_list.html", documents=documents)
 

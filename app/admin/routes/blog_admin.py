@@ -22,7 +22,7 @@ blog_admin_bp = Blueprint('blog_admin', __name__, url_prefix='/admin')
 @role_required(["admin"])
 
 def blog_list():
-    posts = Post.query.order_by(Post.id.desc()).all()
+    posts = Post.query.order_by(Post.created_at.desc()).all()
     return render_template('admin/blog/blog_list.html', posts=posts)
 
 
