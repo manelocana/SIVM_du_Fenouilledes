@@ -56,47 +56,22 @@
         <h2>Travaux</h2>
         <div class="cards-container">
 
-            <div class="container">
-                <div class="card">
-                    <h3>saint paul de fenuillet</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
 
-            <div class="container">
-                <div class="card">
-                    <h3>caudilles</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
+            {% for commune in communes %}
 
-            <div class="container">
-                <div class="card">
-                    <h3>fosse</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
+            <div class="card">
 
-            <div class="container">
-                <div class="card">
-                    <h3>maury</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
+            <img src="{{ url_for('static', filename='img/cards_village/' ~ commune.image) }}">
 
-            <div class="container">
-                <div class="card">
-                    <h3>esquerde</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
-            
-            <div class="container">
-                <div class="card">
-                    <h3>vira</h3>
-                    <p>reparer la route et la riviere</p>
-                </div>
-            </div>
+            <a href="{{ url_for('aci.aci_commune', commune_id=commune.id) }}"
+            class="btn">
+            Voir
+            </a>
+
+        </div>
+
+        {% endfor %}
+
 
         </div>
     </div>

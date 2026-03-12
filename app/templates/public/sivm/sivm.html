@@ -53,7 +53,7 @@
 
         <div class="card">
 
-            <h3>{{ commune.name }}</h3>
+            <img src="{{ url_for('static', filename='img/cards_village/' ~ commune.image) }}">
 
             <a href="{{ url_for('sivm.sivm_commune', commune_id=commune.id) }}"
             class="btn">
